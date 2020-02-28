@@ -1,0 +1,21 @@
+version: '2'
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: local.dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_REDIS_HOST=redis-db
+    depends_on:
+      - redis-db
+    links:
+      - redis-db
+
+  #----------------------------------
+  redis-db:
+    restart: always
+    image: redis
+    ports:
+      - "6379:6379"

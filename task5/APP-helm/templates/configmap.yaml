@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name:  {{ tpl (.Values.app.env.config.name ) . }}
-  namespace: .Values.app.env.config.namespace
+  namespace: testingmy
   labels:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}

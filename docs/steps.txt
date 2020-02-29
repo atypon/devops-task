@@ -4,20 +4,17 @@ ________________
 
 Task 1:
 
-First of all I created a pom file dependency file that has all of the dependency i need (web app, redis, health checker)
+First of all I created a pom file dependency file that has all of the dependency i need (web app, mongo database , health checker)
 at my CounterServlet.java controller file a add a annotations to till set my application as spring boot application.
 
-I started with my hello world web app then how to get the count of the victors for my web app then get the ip address.
+I started with my hello world web app then how to get the count of the visitors for my web app then get the ip address.
 
-Now I start to configuration the redis database to get requites but i could not do that by my self honestly I asked i friend
-to help my with rides implementation. :/
-
-I could not implement rides database the right way but you can test it by run it locally.
+Now I start to config the mongo database to get requests but i could not do that by my self honestly I asked a friend
+to help my with mongo database implementation. :/
 
 I save my app under /task1/APP and started with the extra:
    - the health check ready from the pom file dependency implementation.
-
-note: you need to save ip and user-agent to the data base and implement right way.
+   - user-agent
 ________________
 
 Task 2:

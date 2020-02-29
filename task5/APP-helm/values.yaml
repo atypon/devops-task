@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: 1
 
 image:
   repository: saifnuaimii/app
@@ -11,14 +11,23 @@ service:
   internalPort: 8080
   externalPort: 80
 
-redis:
-  master:
-    persistence:
-      enabled: true
-    livenessProbe:
-      enabled: false
-    readinessProbe:
-      enabled: false
+usersmongodb:
+  mongodbUsername: root
+  mongodbPassword: root
+  mongodbDatabase: users
+  persistence:
+    enabled: false
+  livenessProbe:
+    enabled: false
+  readinessProbe:
+    enabled: false
+  resources:
+    limits:
+      cpu: 500m
+      memory: 756Mi
+    requests:
+      cpu: 50m
+      memory: 256Mi
 
 ingress:
   enabled: false
@@ -33,7 +42,7 @@ app:
     config:
       source: app.properties
       name: configmap-{{ .Values.app.env.config.source }}
-      namespace: ""
+
 resources:
   limits:
     cpu: 1000m
@@ -41,3 +50,10 @@ resources:
   requests:
     cpu: 50m
     memory: 256Mi
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

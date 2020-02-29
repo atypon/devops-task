@@ -1,11 +1,15 @@
 package com.webapp.app.model;
 
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
+
 
 public class User implements Serializable {
 
-
     private static final long serialVersionUID = 1L;
+
+    @Id
     private String id;
     private int count;
 
@@ -13,7 +17,6 @@ public class User implements Serializable {
         this.id = id;
         this.count = count;
     }
-
 
     public String getId() {
         return id;

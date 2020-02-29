@@ -1,6 +1,5 @@
 FROM maven:3.5.4-jdk-8-alpine as mvn_builder_stage1
 EXPOSE 8080
-RUN apk add redis
 WORKDIR /myapp
 COPY src /myapp/src
 COPY pom.xml /myapp/pom.xml
@@ -11,6 +10,4 @@ WORKDIR /myrunningapp
 ARG hostname=saifnuaimii/app:v1.0.0
 EXPOSE 8080
 COPY --from=mvn_builder_stage1 /myapp .
-CMD redis-cli -h redis-server -p 8080
-
 CMD java -D -jar target/app-*.jar

@@ -1,8 +1,8 @@
 FROM maven:3.5.4-jdk-8-alpine as mvn_builder_stage1
 EXPOSE 8080
 WORKDIR /myapp
-COPY APP/src /myapp/src
-COPY APP/pom.xml /myapp/pom.xml
+COPY src /myapp/src
+COPY pom.xml /myapp/pom.xml
 RUN mvn clean install
 
 FROM openjdk:8-jre-alpine as mvn_runner_stage2

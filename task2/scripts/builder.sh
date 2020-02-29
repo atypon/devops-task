@@ -23,7 +23,8 @@ else
     exit 1
 fi
 #----------------------------------------------------------
-cd ..
+cd devops-task/APP
+pwd
 docker build -t ${DOCKER_IMAGE}:${DOCKER_IMAGE_VERSION} -f Dockerfile .
 
 MY_DOCKER_RANDOM_NAME=myapp$RANDOM

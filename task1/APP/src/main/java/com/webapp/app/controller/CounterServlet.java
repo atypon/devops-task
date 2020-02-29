@@ -41,8 +41,7 @@ public class CounterServlet extends HttpServlet {
 
             PrintWriter out = response.getWriter();
             out.println("Hello World !");
-            out.println("<html><body><h3>Welcome to my website !</h3><hr></body></html>");
-            out.println("You are visitor number: " + (++iHitCounter));
+            out.println("Welcome to my website !");
             out.println("IP number: " + (remoteAddr));
             out.println("count : " + (user.getCount()));
         }

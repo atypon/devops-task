@@ -4,9 +4,29 @@ ________________
 
 Task 1:
 
+First of all I created a pom file dependency file that has all of the dependency i need (web app, redis, health checker)
+at my CounterServlet.java controller file a add a annotations to till set my application as spring boot application.
+
+I started with my hello world web app then how to get the count of the victors for my web app then get the ip address.
+
+Now I start to configuration the redis data base to get requites but i could not do that by my self honestly I asked i friend
+to help my with rides implementation. :/
+
+I save my app under /task1/APP and started with the extra:
+   - the health check ready from the pom file dependency implementation.
+
+note: you need to save ip and user-agent to the data base and implement right way.
 ________________
 
 Task 2:
+
+So I started by create a builder.sh file that first think first check if the repo i needed is there of not.
+
+Create a dockerfile and read more about multi-stage docker images build the first one build my app and the second one
+run it.
+
+Implement ability to run the image in debug mode and set network=host and the rest of args.
+
 
 ________________
 

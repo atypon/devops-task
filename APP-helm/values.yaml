@@ -1,0 +1,43 @@
+replicaCount: 3
+
+image:
+  repository: saifnuaimii/app
+  tag: v1.0.0
+  pullPolicy: Always
+
+service:
+  name: my-app
+  type: ClusterIP
+  internalPort: 8080
+  externalPort: 80
+
+redis:
+  master:
+    persistence:
+      enabled: true
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
+
+ingress:
+  enabled: false
+  annotations: {}
+  path: /
+  hosts:
+    - chart-example.local
+  tls: []
+
+app:
+  env:
+    config:
+      source: app.properties
+      name: configmap-{{ .Values.app.env.config.source }}
+      namespace: ""
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1500Mi
+  requests:
+    cpu: 50m
+    memory: 256Mi

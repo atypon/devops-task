@@ -9,8 +9,10 @@ at my CounterServlet.java controller file a add a annotations to till set my app
 
 I started with my hello world web app then how to get the count of the victors for my web app then get the ip address.
 
-Now I start to configuration the redis data base to get requites but i could not do that by my self honestly I asked i friend
+Now I start to configuration the redis database to get requites but i could not do that by my self honestly I asked i friend
 to help my with rides implementation. :/
+
+I could not implement rides database the right way but you can test it by run it locally.
 
 I save my app under /task1/APP and started with the extra:
    - the health check ready from the pom file dependency implementation.
@@ -27,17 +29,26 @@ run it.
 
 Implement ability to run the image in debug mode and set network=host and the rest of args.
 
+Test that my application image and container is working fine push it and save it.
 
+extra points:
+   - Build the exit status codes.
 ________________
 
 Task 3:
 
+Build docker-compose from two parts first part is the database part and the second one is the app part.
+
+Add all the configuration that the app need on the resources file.
 ________________
 
 Task 4:
 
+
 ________________
 
 Task 5:
+
+Start build my helm chart using basic files  values.yaml requirements.yaml Chart.yaml
 
 

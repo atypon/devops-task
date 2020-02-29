@@ -1,0 +1,13 @@
+version: '2'
+services:
+  redis:
+    image: redis:3.0.3
+    hostname: redis-server
+    ports:
+      - "6379:6379"
+  app1:
+    image: saifnuaimii/app:v1.0.0
+    links:
+      - "redis:redis-server"
+    ports:
+      - "8080:8080"

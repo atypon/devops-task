@@ -47,5 +47,11 @@ ________________
 Task 5:
 
 Start build my helm chart using basic files  values.yaml requirements.yaml Chart.yaml
+I create templates and add configmap.yaml, deployment.yaml, service.yaml finally i get a
+dependency chart from chart repo.
 
+configure the app.properties to match the database.
+
+Kindly add your tiller-namespace line 8 and namespace line 9 to task5/deploy.sh
+and the namespace to task5/APP-helm/templates/configmap.yaml line 5
 

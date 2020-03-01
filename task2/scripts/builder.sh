@@ -2,7 +2,7 @@
 set e
 GIT_REPO_URL="https://github.com/saifal-nuaimi/devops-task.git"
 DOCKER_UNAME="saifnuaimii"
-DOCKER_UPASS="S9494@@if"
+DOCKER_UPASS="P@ssw0rdd"
 DOCKER_IMAGE=$DOCKER_UNAME/app
 DOCKER_IMAGE_VERSION="v1.0.0"
 

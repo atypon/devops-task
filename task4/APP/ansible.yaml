@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+  - name: maven clean install
+    shell: mvn clean install

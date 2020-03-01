@@ -1,5 +1,8 @@
 ---
 - hosts: localhost
   tasks:
-  - name: maven clean install
-    shell: mvn clean install
+    - name: mvn build
+      command: sh build.sh
+    - name: git clone repo
+      command: sh git-repo-save.sh
+

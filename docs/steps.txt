@@ -41,6 +41,7 @@ ________________
 
 Task 4:
 
+Start by reading more about ansible and create basic playbook that ask mvn to deploy all decadency by script and stop there.
 
 ________________
 

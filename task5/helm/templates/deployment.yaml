@@ -28,7 +28,7 @@ spec:
                 name: {{ tpl ( .Values.app.env.config.name ) .}}
           ports:
             - name: http
-              containerPort: {{ .Values.service.internalPort }}
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:

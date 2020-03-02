@@ -4,9 +4,7 @@ services:
 
   #-----------------web app-----------------
   webapp:
-    build:
-      context: .
-      dockerfile: local.dockerfile
+    image: saifnuaimii/app:v1.0.0
     environment:
       - SPRING_DATA_MONGODB_URI=mongodb://root:root@mongo-db:27017/
       - SPRING_DATA_MONGODB_DATABASE=users

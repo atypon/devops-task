@@ -1,8 +1,0 @@
----
-- hosts: localhost
-  tasks:
-    - name: mvn build
-      command: sh build.sh
-    - name: git clone repo
-      command: sh git-repo-save.sh
-

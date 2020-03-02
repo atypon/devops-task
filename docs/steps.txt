@@ -37,6 +37,14 @@ Task 3:
 Build docker-compose from two parts first part is the database part and the second one is the app part.
 
 Add all the configuration that the app need on the resources file.
+
+To start up the docker-compose run ./task3/start.sh or the following command:
+
+$ git clone https://github.com/saifal-nuaimi/devops-task.git APP
+$ cd APP
+$ docker-compose up
+
+
 ________________
 
 Task 4:
@@ -55,4 +63,22 @@ configure the app.properties to match the database.
 
 Kindly add your tiller-namespace line 8 and namespace line 9 to task5/deploy.sh
 and the namespace to task5/APP-helm/templates/configmap.yaml line 5
+
+To start up the helm chart run ./task5/deploy.sh or the following command :
+
+cd helm
+helm upgrade \
+    --install \
+    --wait \
+    --force \
+    --timeout 900 \
+    --tiller-namespace=kryptonite\
+    --namespace=testingmy \
+    my-app \
+    .
+
+
+
+
+
 

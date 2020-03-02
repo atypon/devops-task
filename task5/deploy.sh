@@ -1,11 +1,11 @@
 #!/bin/bash
-cd APP-helm
+cd helm
 helm upgrade \
     --install \
     --wait \
     --force \
     --timeout 900 \
-    --tiller-namespace=""\
-    --namespace="" \
+    --tiller-namespace=kryptonite\
+    --namespace=testingmy \
     my-app \
     .

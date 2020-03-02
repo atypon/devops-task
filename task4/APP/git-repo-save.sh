@@ -1,1 +1,0 @@
-git clone  https://github.com/saifal-nuaimi/devops-task.git /opt/my_app/release_version

@@ -64,7 +64,8 @@ is_healthy() {
     while [ "$health_status" = "running" ]
     do
       echo "container is running"
-      sleep 10
+      echo "wait for the service to be up"
+      sleep 7
       break
     done
     }
@@ -77,7 +78,7 @@ APP_STATUS=$(curl --silent http://localhost:8080/actuator/health | jq .status)
 echo $APP_STATUS
 if [ $APP_STATUS="UP" ]; then
   echo "Your application working fine"
-else [$APP_STATUS="Down"]
+else [ $APP_STATUS="Down" ]
   echo "missing/wrong .Application failed in testing"
   exit 5
 fi

@@ -5,7 +5,7 @@ helm upgrade \
     --wait \
     --force \
     --timeout 900 \
-    --tiller-namespace=kryptonite\
-    --namespace=testingmy \
+    --tiller-namespace=""\
+    --namespace="" \
     my-app \
     .

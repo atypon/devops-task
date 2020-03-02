@@ -1,0 +1,65 @@
+---
+- name: kubectl
+  block:
+
+    ############################################################################
+    # Install ctl
+    ############################################################################
+    - name: install pre-requisits
+      apt:
+        name: "{{item}}"
+        state: present
+      with_items:
+        - ca-certificates
+        - apt-transport-https
+
+    - name: Add repo key
+      apt_key:
+        url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+        state: present
+
+    - name: Add kubernetes repo
+      apt_repository:
+        repo: 'deb http://apt.kubernetes.io/ kubernetes-xenial main'
+        state: present
+        update_cache: yes
+
+    - name: Install kubectl packages
+      apt:
+        name: "{{item}}"
+        state: present
+      with_items:
+        - kubectl
+
+    - name: kubectl autocomplete
+      command: 'echo "source <(kubectl completion bash)" >> ~/.bashrc'
+
+    ############################################################################
+    # Install HELM
+    ############################################################################
+    - name: Check if installed
+      stat:
+        path: /usr/local/bin/helm
+      register: installed_helm
+
+    - when: installed_helm.stat.exists == False
+      block:
+
+        - name: download & extract helm
+          unarchive:
+            src: https://kubernetes-helm.storage.googleapis.com/helm-v2.11.0-linux-amd64.tar.gz
+            dest: /usr/local/bin
+            remote_src: yes
+
+        - name: move file
+          command: mv /usr/local/bin/linux-amd64/helm /usr/local/bin/helm
+
+        - name: set file attribute
+          file:
+            path: /usr/local/bin/helm
+            mode: 0755
+
+  become: yes
+
+- name: kubectl autocomplete
+  command: 'echo "source <(kubectl completion bash)" >> ~/.bashrc'

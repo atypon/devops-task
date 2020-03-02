@@ -1,0 +1,11 @@
+---
+- name: openjdk8
+  block:
+
+    - name: Install OpenJDK 8
+      apt:
+        name: "openjdk-8-jdk"
+        state: present
+        update_cache: yes
+
+  become: yes

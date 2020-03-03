@@ -65,7 +65,7 @@ is_healthy() {
     do
       echo "container is running"
       echo "wait for the service to be up"
-      sleep 7
+      sleep 10
       break
     done
     }
@@ -88,13 +88,12 @@ docker-compose down
 #-----------------------------------------------------
 #
 ## Push the docker Image
-docker_push_image() {
-  docker push $DOCKER_IMAGE
-}
 
-if docker_push_image; then
+CHECK_IMAGE_EXISTS=$(docker images | grep $DOCKER_IMAGE  |  awk '{print $1}' | head -n 1 )
+echo $CHECK_IMAGE_EXISTS
+if [ $CHECK_IMAGE_EXISTS=$DOCKER_IMAGE ] ; then
   echo "Pushing your image"
-  docker_push_image
+  docker push $DOCKER_IMAGE
 else
   echo "missing/wrong .Pusing failed."
   exit 6

@@ -1,0 +1,14 @@
+- hosts: all
+  gather_facts: False
+
+- hosts: all
+  connection: local
+  become: yes
+  become_user: root
+  roles:
+    - openjdk8
+    - ansible
+    - maven
+
+    - docker
+    - kubectl

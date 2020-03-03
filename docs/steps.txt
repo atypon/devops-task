@@ -4,20 +4,81 @@ ________________
 
 Task 1:
 
+First of all I created a pom file dependency file that has all of the dependency i need (web app, mongo database , health checker)
+at my CounterServlet.java controller file a add a annotations to till set my application as spring boot application.
+
+I started with my hello world web app then how to get the count of the visitors for my web app then get the ip address.
+
+Now I start to config the mongo database to get requests but i could not do that by my self honestly I asked a friend
+to help my with mongo database implementation. :/
+
+I save my app under /task1/APP and started with the extra:
+   - the health check ready from the pom file dependency implementation.
+   - user-agent
 ________________
 
 Task 2:
 
+So I started by create a builder.sh file that first think first check if the repo i needed is there of not.
+
+Create a dockerfile and read more about multi-stage docker images build the first one build my app and the second one
+run it.
+
+Implement ability to run the image in debug mode and set network=host and the rest of args.
+
+Test that my application image and container is working fine push it and save it.
+
+extra points:
+   - Build the exit status codes.
 ________________
 
 Task 3:
+
+Build docker-compose from two parts first part is the database part and the second one is the app part.
+
+Add all the configuration that the app need on the resources file.
+
+To start up the docker-compose run ./task3/start.sh or the following command:
+
+$ git clone https://github.com/saifal-nuaimi/devops-task.git APP
+$ cd APP
+$ docker-compose up
+
 
 ________________
 
 Task 4:
 
+Start by reading more about ansible and create basic playbook that ask mvn to deploy all decadency by script and stop there.
+
 ________________
 
 Task 5:
+
+Start build my helm chart using basic files  values.yaml requirements.yaml Chart.yaml
+I create templates and add configmap.yaml, deployment.yaml, service.yaml finally i get a
+dependency chart from chart repo.
+
+configure the app.properties to match the database.
+
+Kindly add your tiller-namespace line 8 and namespace line 9 to task5/deploy.sh
+and the namespace to task5/APP-helm/templates/configmap.yaml line 5
+
+To start up the helm chart run ./task5/deploy.sh or the following command :
+
+cd helm
+helm upgrade \
+    --install \
+    --wait \
+    --force \
+    --timeout 900 \
+    --tiller-namespace=kryptonite\
+    --namespace=testingmy \
+    my-app \
+    .
+
+
+
+
 
 

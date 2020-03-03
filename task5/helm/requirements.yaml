@@ -1,0 +1,5 @@
+dependencies:
+  - name: mongodb
+    alias: usersmongodb
+    version: 4.8.4
+    repository: https://kubernetes-charts.storage.googleapis.com/

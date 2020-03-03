@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  #-----------------web app-----------------
+  webapp:
+    build:
+      context: .
+      dockerfile: local.dockerfile
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://root:root@mongo-db:27017/
+      - SPRING_DATA_MONGODB_DATABASE=users
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo-db
+
+  #-----------------mongo db-----------------
+  mongo-db:
+    restart: always
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_DATABASE=users
